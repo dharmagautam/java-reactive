@@ -18,6 +18,9 @@ public class ReactiveStreamExercise3 {
     // into a List and print the list and its size
     List<Integer> numbers = intNumbersFlux.toStream().collect(Collectors.toList());
 
+    // Why it's taking time? we can use log see
+//     List<Integer> numbers = intNumbersFlux.log().toStream().collect(Collectors.toList());
+
     System.out.println(numbers);
     System.out.println("Size: " + numbers.size());
 
