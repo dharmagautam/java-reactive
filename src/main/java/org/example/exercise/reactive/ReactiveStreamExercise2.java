@@ -15,7 +15,7 @@ public class ReactiveStreamExercise2 {
     Flux<Players> playersFlux = ReactiveStreamData.playerFlux();
 
     // Print all numbers in the ReactiveSources.intNumbersFlux stream
-    intNumbersFlux.subscribe(System.out::println);
+    //intNumbersFlux.subscribe(System.out::println);
 
     // Print all players in the ReactiveSources.playersFlux stream
     playersFlux.subscribe(System.out::println);

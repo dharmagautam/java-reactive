@@ -15,9 +15,13 @@ public class ReactiveStreamExercise8 {
     // Print values from intNumbersFluxWithException and print a message when error happens
     intNumbersFluxWithException.subscribe(System.out::println, System.out::println);
 
+    // you can also use doOnError method to print he customized message
+    intNumbersFluxWithException.doOnError(element -> System.out.println("Error : " + element.getMessage()))
+                    .subscribe(System.out::println);
+
     // Print values from intNumbersFluxWithException and continue on errors
     intNumbersFluxWithException
-        .onErrorContinue((exception, element) -> {})
+        .onErrorContinue((exception, element) -> System.out.println("Error : " + exception.getMessage()))
         .subscribe(System.out::println, System.out::println);
 
     // Print values from intNumbersFluxWithException and when errors

@@ -24,7 +24,7 @@ public class ReactiveStreamExercise6 {
                 e ->
                     System.out.println(
                         "Could not retrieve the value from unresponsiveMono within 5 seconds"))
-            .onErrorReturn("")
+            .onErrorReturn("Fall back value")
             .block();
     System.out.println(valueFromMono);
 
@@ -36,7 +36,7 @@ public class ReactiveStreamExercise6 {
                 e ->
                     System.out.println(
                         "Could not retrieve the value from unresponsiveFlux within 5 seconds"))
-            .onErrorReturn("")
+            .onErrorReturn("Fall back value")
             .collectList()
             .block();
 

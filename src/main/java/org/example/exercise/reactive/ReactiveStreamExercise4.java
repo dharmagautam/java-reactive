@@ -4,6 +4,7 @@ import org.example.data.ReactiveStreamData;
 import reactor.core.publisher.Mono;
 
 import java.io.IOException;
+import java.util.Date;
 
 public class ReactiveStreamExercise4 {
 
@@ -13,8 +14,7 @@ public class ReactiveStreamExercise4 {
     Mono<Integer> intNumberMono = ReactiveStreamData.intNumberMono();
 
     // Print the value from intNumberMono when it emits
-    intNumberMono.subscribe(System.out::println);
-
+    //intNumberMono.subscribe(System.out::println);
     // Get the value from the Mono into an integer variable
     Integer integer = intNumberMono.block();
     System.out.println("Integer value: " + integer);
